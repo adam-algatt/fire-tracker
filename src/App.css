@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  text-align: center;
+  letter-spacing: 1px;
+  background-image: url("https://www.transparenttextures.com/patterns/cartographer.png") ;
+  width: 100%;
+  background-color: #1d771d;
+  color: #FF7700;
+  height: 7vh;
+}
+
+.header-title {
+  position: absolute;
+  top: calc(3.5vh - 1rem);
+  left: 50%;
+ color: #FF7700;
+ font-size: 2rem;
+}
+
+
+
+.map {
+  width: 100vw;
+  height: 93vh;
+}
+
+.location-icon {
+outline: none;
+font-size: 1.35rem;
+color: red;
+cursor: pointer;
+z-index: 2;
+}
+
+.kinetic-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 10px 20px; 
+  /* background-image: url(./images/Off-The-Grid-Fire-Lookout-1.png) ; */
+}
+
+.kinetic-container h1 {
+  color: #fff;
+  width: 100%;
+  margin: 0 auto;
+  letter-spacing: .04rem;
+}
+
+.kinetic {
+  position: relative;
+  height: 80px;
+  width: 80px;
+  margin-top: -50vh; 
+}
+
+.kinetic::after,
+.kinetic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 0;
+  border: 50px solid transparent;
+  border-bottom-color: #fff;
+  animation: rotateA 2s linear infinite 0.5s;
+}
+
+.kinetic::before {
+  transform: rotate(90deg);
+  animation: rotateB 2s linear infinite;
+}
+
+@keyframes rotateA {
+
+  0%,
+  25% {
+    transform: rotate(0deg);
+  }
+
+  50%,
+  75% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+
+}
+
+@keyframes rotateB {
+
+  0%,
+  25% {
+    transform: rotate(90deg);
+  }
+
+  50%,
+  75% {
+    transform: rotate(270deg);
+  }
+
+  100% {
+    transform: rotate(450deg);
+  }
+
+}
+
+.event-info {
+   position: absolute;
+   margin-top: 10px;
+   top: 7vh;
+   left: 0vw;
+   background-color: transparent;
+   list-style: none;
+   border: 1px solid #fff;
+   background-color: rgba(0 0 0 / .5);
+   padding: 10px 20px; 
+   border-radius: 4px;
+  box-shadow: inset;
+  color: #fff;
+  letter-spacing: .1rem;
+  line-height: 1.5rem;
+}
+
+.event-info h3 {
+text-align: center;
+margin-bottom: 5px;
+text-decoration: underline;
+letter-spacing: .05rem
+}
