@@ -6,7 +6,7 @@ import Map from './components/Map';
 import { useState, useEffect } from 'react'
 
 function App() {
-
+  const [locationInfo, setLocationInfo] = useState(null);
   const [eventData, setEventData] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -20,12 +20,21 @@ function App() {
       setLoading(false); 
     }
     fetchEvents();
+    if(eventData.length < 1) fetchEvents()
+    return () => {
+      setEventData([])
+      setLocationInfo(null)
+    }  //eslint-disable-next-line
   }, [])
-  
+
   return (
     <div className="App">
     {!loading ? <Header/> : <Loading/> }
-    <Map eventData={eventData}/>
+    <Map eventData={eventData}
+      loading={loading}
+      locationInfo={locationInfo}
+      setLocationInfo={setLocationInfo}
+    />
     </div>
   );
 }

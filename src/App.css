@@ -11,15 +11,13 @@
   width: 100%;
   background-color: #1d771d;
   color: #FF7700;
-  height: 7vh;
+  min-height: 7vh;
+  padding-top: 1vh;
+  padding-bottom:1vh;
 }
 
 .header-title {
-  position: absolute;
-  top: calc(3.5vh - 1rem);
-  left: 50%;
- color: #FF7700;
- font-size: 2rem;
+ line-height: 1.5em;
 }
 
 
@@ -27,6 +25,7 @@
 .map {
   width: 100vw;
   height: 93vh;
+  z-index: 0;
 }
 
 .location-icon {
@@ -118,7 +117,7 @@ z-index: 2;
 
 }
 
-.event-info {
+.event-info{
    position: absolute;
    margin-top: 10px;
    top: 7vh;
@@ -127,17 +126,42 @@ z-index: 2;
    list-style: none;
    border: 1px solid #fff;
    background-color: rgba(0 0 0 / .5);
-   padding: 10px 20px; 
+   padding: 15px 25px; 
    border-radius: 4px;
   box-shadow: inset;
   color: #fff;
   letter-spacing: .1rem;
   line-height: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 7px; 
+  z-index: 5;
 }
 
-.event-info h3 {
-text-align: center;
-margin-bottom: 5px;
-text-decoration: underline;
-letter-spacing: .05rem
+.event-info a {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700; 
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-size: .85em;
+}
+
+
+.event-button {
+  padding: 12px 17px;
+  background-color: black;
+  align-self: center;
+  margin-top: 1.5em;
+  cursor: pointer;
+
+}
+
+.event-link {
+letter-spacing: .05rem;
+color: #fff;
+font-weight: 700; 
+text-decoration: none;
+letter-spacing: 2px;
+font-size: .85em;
 }

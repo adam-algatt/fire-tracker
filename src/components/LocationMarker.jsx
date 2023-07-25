@@ -1,13 +1,12 @@
 import React from 'react'
 import { Icon } from '@iconify/react'
 import { v4 as uuidv4 } from 'uuid'
-import locationIcon from '@iconify/icons-mdi/fire-alert'
-
+import locationIcon from '@iconify/icons-mdi/map-marker-alert'
 
 const getKey = (() => {
 return uuidv4();
 })()
-const LocationMarker = ({ lat, lng, onClick }) => {
+const LocationMarker = ({ onClick, size }) => {
   return (
  
       <Icon
@@ -15,6 +14,8 @@ const LocationMarker = ({ lat, lng, onClick }) => {
         key={getKey}
         className='location-icon'
         onClick={onClick}
+        width={size}
+        height={size}
       />
   
   )

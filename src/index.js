@@ -1,10 +1,12 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import App from './App';
 
-const root = createRoot(document.getElementById('root'));
-root.render(
-    <App />
+// using old (react 17) render method to 
+//prevent flickering of map icons 
+
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+
+ReactDOM.render(
+  <App />,
+  document.getElementById("root")
 );
-
-
